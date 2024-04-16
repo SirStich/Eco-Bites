@@ -1,0 +1,50 @@
+
+body {
+    max-width: 1440px;
+
+}
+.heading-1 {
+    /*font-family: ;*/
+    font-size: 2.25rem;
+}
+.container {
+    padding: 80px 170px 100px 170px;
+}
+
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 88px;
+}
+
+.teaser-blog {
+    width: 100%;
+    position: relative;
+}
+
+.teaser-blog__text {
+    position: absolute;
+    width: 407px;
+    padding: 24px;
+    bottom: -66px;
+    left: -38px;
+    background-color: red;
+}
+
+.teaser-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.featured-blogs-container {
+    width: 380px;
+    background-color: red;
+}
+
+.featured-blog > img {
+    width: 48px;
+    height: 48px;
+}
