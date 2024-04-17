@@ -1,4 +1,7 @@
-
+:root {
+    --base-font-size: 16px;
+    --secondary-text-color: #596F7A;
+}
 body {
     max-width: 1440px;
 
@@ -11,6 +14,18 @@ body {
     padding: 80px 170px 100px 170px;
 }
 
+
+.btn {
+    text-decoration: none;
+    color: var(--secondary-text-color) ;
+    background-color: white;
+}
+.btn-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 
 .flex {
     display: flex;
