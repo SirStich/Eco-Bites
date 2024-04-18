@@ -5,7 +5,7 @@ const blogEntries = [
         created: "12/3/24",
         author: "N/A",
         img: "Blog-Header",
-        content: ""
+        content: "",
     },
     {
         id: "2",
@@ -53,9 +53,10 @@ function createFeaturedBlogUI(blog) {
     const container = document.createElement("div");
     container.className = "featured-blog";
     const imgElement = document.createElement("img");
-    imgElement.src = `./assets/images/${blog.img}.png`;  // Added blog image
+    imgElement.src = `../assets/images/${blog.img}.png`;  // Added blog image
     const titleElement = document.createElement("h4");
     titleElement.className = "title";
+    titleElement.innerText = blog.title;
     container.append(imgElement);
     container.append(titleElement);
     console.log(container);
