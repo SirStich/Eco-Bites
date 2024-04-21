@@ -1,0 +1,14 @@
+.slideshow-container {
+    max-width: 300px;
+    position: relative;
+    float: right;
+    margin-right: 40%;
+    margin-top: 2%;
+}
+
+.mySlides {
+    display: none;
+}
+
+
+
