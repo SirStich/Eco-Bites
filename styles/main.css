@@ -27,6 +27,10 @@ li, a, ul{
     list-style: none;
 }
 
+li:hover{
+    color: #8b8b7e;
+}
+
 
 .headTxt{
     font-family: "Mystery Quest", system-ui;

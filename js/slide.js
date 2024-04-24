@@ -6,5 +6,5 @@ function carousel() {
     slides[slideIndex].style.display = "none";
     slideIndex = (slideIndex + 1) % slides.length;
     slides[slideIndex].style.display = "block";
-    setTimeout(carousel, 2500);
+    setTimeout(carousel, 3000);
 }
