@@ -2,6 +2,7 @@
     --base-font-size: 16px;
     --secondary-text-color: #596F7A;
     --background-beige-color: #F9F3EE;
+    --font-family: "Playfair Display", serif;
 }
 * {
     box-sizing: border-box;
@@ -11,11 +12,26 @@
 body {
     max-width: 1440px;
 
+    margin: 0 auto; /* center content */
 }
-.heading-1 {
+
+.heading {
+    color: #000;
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.xl {
     /*font-family: ;*/
     font-size: 2.25rem;
 }
+
+.l {
+    font-size: 1.5rem;
+}
+
 .container {
     padding: 80px 170px 100px 170px;
 }
@@ -24,7 +40,6 @@ body {
 .btn {
     text-decoration: none;
     color: var(--secondary-text-color) ;
-    background-color: white;
 }
 .btn-content {
     display: flex;
@@ -36,8 +51,9 @@ body {
 .flex {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 88px;
+    justify-content: space-between;
+    /*gap: 88px;*/
+    gap: 32px;
 }
 
 .teaser-blog {
@@ -52,6 +68,9 @@ body {
     padding: 24px;
     bottom: -66px;
     left: -38px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     /*background-color: red;*/
     background: var(--background-beige-color);
     box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.15);
@@ -59,11 +78,13 @@ body {
 
 .teaser-img {
     width: 100%;
-    height: auto;
+    /*height: auto;*/
+    height: 100%;
     object-fit: cover;
 }
 
 #featured-blogs-container {
+    max-width: 380px;
     width: 380px;
     padding: 24px;
     display: flex;
@@ -83,6 +104,9 @@ body {
 
 .featured-blog {
     display: flex;
+    /*width: 320px;*/
+
+    /*width: 100%;*/
     flex-direction: row;
     gap: 16px;
     /*align-items: flex-start;*/
@@ -92,4 +116,21 @@ body {
 .featured-blog > img {
     width: 80px;
     height: 80px;
+}
+
+/* ------------- Media Queries ------------- */
+@media (max-width: 1120px) {
+
+    .teaser-img {
+        width: 100%;
+        /*height: auto;*/
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .teaser-blog__text {
+        max-width: 250px;
+        padding: 12px;
+        font-size: 0.75rem;
+    }
 }

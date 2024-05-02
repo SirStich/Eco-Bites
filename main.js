@@ -1,15 +1,15 @@
 const blogEntries = [
     {
         id: "1",
-        title: "Blog 1",
+        title: "Cupcakes nach jeder Art",
         created: "12/3/24",
         author: "N/A",
         img: "Blog-Header",
-        content: "",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales et est nec viverra. Donec.",
     },
     {
         id: "2",
-        title: "Blog 2",
+        title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales et est nec viverra. Donec.",
         created: "12/4/25",
         author: "N/A",
         img: "Blog-Header",
@@ -46,7 +46,10 @@ const featuredBlogsContainer = document.querySelector("#featured-blogs-container
 function loadFeaturedBlogs() {
     // Existing code
     // createFeaturedBlogUI(blogEntries[0]);
-    featuredBlogsContainer.appendChild(createFeaturedBlogUI(blogEntries[0]));
+    blogEntries.forEach(el => {
+
+        featuredBlogsContainer.appendChild(createFeaturedBlogUI(el));
+    })
 }
 
 function createFeaturedBlogUI(blog) {
