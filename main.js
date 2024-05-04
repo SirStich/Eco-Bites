@@ -1,7 +1,7 @@
 const blogEntries = [
     {
         id: "1",
-        title: "Cupcakes nach jeder Art",
+        title: "Current Favorites",
         created: "12/3/24",
         author: "N/A",
         img: "Blog-Header",
@@ -9,7 +9,7 @@ const blogEntries = [
     },
     {
         id: "2",
-        title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales et est nec viverra. Donec.",
+        title: "Für anspruchsvolle Gaumen",
         created: "12/4/25",
         author: "N/A",
         img: "Blog-Header",
@@ -17,7 +17,7 @@ const blogEntries = [
     },
     {
         id: "3",
-        title: "Blog 3",
+        title: "Green Choices",
         created: "12/5/26",
         author: "N/A",
         img: "Blog-Header",
@@ -25,7 +25,7 @@ const blogEntries = [
     },
     {
         id: "4",
-        title: "Blog 4",
+        title: "New Flavor Alert",
         created: "12/6/27",
         author: "N/A",
         img: "Blog-Header",
@@ -58,10 +58,14 @@ function createFeaturedBlogUI(blog) {
     const imgElement = document.createElement("img");
     imgElement.src = `../assets/images/${blog.img}.png`;  // Added blog image
     const titleElement = document.createElement("h4");
+    // const contentElement = document.createElement("p");
+    // contentElement.textContent = blog.content;
     titleElement.className = "title";
     titleElement.innerText = blog.title;
     container.append(imgElement);
     container.append(titleElement);
+    // container.append(contentElement);
+
     console.log(container);
     return container;
 }
