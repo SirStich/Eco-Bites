@@ -8,3 +8,4 @@ function carousel() {
     slides[slideIndex].style.display = "block";
     setTimeout(carousel, 3000);
 }
+
