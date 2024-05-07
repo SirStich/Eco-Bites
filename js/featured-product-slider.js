@@ -39,7 +39,7 @@ function createImageSlider(data) {
     container.className = "container";
     // Auf diesen Container müssen wir die Animation ansprechen.
     const imagesDOMElements = data.map(ig => createImageElement(ig));
-    console.log(imagesDOMElements)
+    // console.log(imagesDOMElements)
     imagesDOMElements.forEach(el => slider.append(el))
 }
 
@@ -91,7 +91,7 @@ function loadImage(event) {
             playBtn.classList.remove("isPlaying");
         }
     }
-    console.log(targetId);
+    // console.log(targetId);
 
     // clearInterval(refreshInterval);
 
@@ -121,7 +121,7 @@ function updateImage(eventId) {
         if (el.classList.contains(showImgClassName)) {
             el.classList.remove(showImgClassName);
             currentIdx = idx;
-            console.log(`image with idx to update: ${idx}`);
+            // console.log(`image with idx to update: ${idx}`);
         }
     });
 
@@ -149,7 +149,7 @@ leftBtn.addEventListener("click", (e) => loadImage(e));
 rightBtn.addEventListener("click", (e) => loadImage(e));
 playBtn.addEventListener("click", () => {
 
-    console.log("play click btn triggered")
+    // console.log("play click btn triggered")
     // we need to toggle the state
     enableAutoPlay = !enableAutoPlay;
 

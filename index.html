@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/landing-page-responsive.css">
     <link rel="stylesheet" href="styles/slide.css">
     <link rel="stylesheet" href="styles/product-slider.styles.css">
+    <link rel="stylesheet" href="styles/footer.styles.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,17 +32,23 @@
             <br>
             <li><a href="pages/product_catalog.html" title="order">order now</a></li>
             <br>
-            <li><a href="pages/about.html" title="about">about</a></li>
+            <li>
+                <p id="about-btn">about</p>
+<!--                <a id="about-btn" href="pages/about.html" title="about">about</a>-->
+            </li>
             <br>
             <li><a href="pages/blog.html" title="blog">blog</a></li>
             <br>
-            <li><a href="pages/contact.html" title="contact">contact</a></li>
+            <li>
+                <p id="contact-btn">contact</p>
+<!--                <a id="contact-btn" href="pages/contact.html"  title="contact">contact</a>-->
+            </li>
         </ul>
     </nav>
 </header>
 <!--    Main-->
 <main>
-    <div class="hero-section-container">
+    <div class="hero-section-container" id="hero-section">
         <section>
             <div class="headTxt">
                 <a href="../index.html"><img id="logo" src="../assets/images/Logo-EcoBites.svg" alt="logo"/></a>
@@ -86,16 +93,110 @@
             </svg>
         </div>
     </div>
+<!--    Product Description Container-->
     <div id="product-description-container">
         <img class="desc-img active" id="pd0" src="assets/images/PDesc1.jpg" alt="product description image 1">
         <img class="desc-img" id="pd1" src="assets/images/PDesc2.jpg">
         <img class="desc-img" id="pd2" src="assets/images/PDesc3.jpg">
     </div>
+
+<!--    About Section-->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="image">
+                <img src="/assets/imgs/about_me.png" alt="Julia Schneider">
+            </div>
+            <div class="text">
+                <h2>About Me</h2>
+                <p>Hello! I'm Julia Schneider, the proud founder of EcoBites, where baking meets sustainability in the sweetest possible way. Let me share with you the story behind our bakery.
+
+                    As a devoted baker and staunch environmentalist, I embarked on this journey with a simple yet powerful mission: to create mouthwatering cupcakes using only the finest organic ingredients. Baking has always been my passion, but my commitment to protecting our planet runs just as deep.
+
+                    At EcoBites, each cupcake is a testament to my belief in the beauty of natural flavors and the importance of preserving our environment. From the moment you take that first bite, I want you to experience the joy of indulgence while knowing that every ingredient was chosen with care for both your palate and the planet.
+
+                    But it doesn't stop there. Sustainability is at the heart of everything we do at EcoBites. From our eco-friendly packaging to our commitment to sustainable business practices, every decision we make reflects our dedication to minimizing our ecological footprint.
+
+                    Through EcoBites, I hope to inspire others to embrace a lifestyle that honors and protects our precious earth. Together, let's savor the goodness of nature one cupcake at a time and pave the way for a greener, sweeter future.
+
+                    Join me on this delicious journey with EcoBites, where every bite is a celebration of nature's bounty and a step towards a brighter tomorrow.</p>
+            </div>
+        </div>
+    </section>
+<!--    Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h1>Contact Us</h1>
+                <p>We are so glad that you have come to visit The Cupcake Collection website.</p>
+                <h2 class="right-align">Get In Touch</h2>
+                <p class="right-align">Leave us a message.</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span id="name-error" class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span id="email-error" class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                        <span id="phone-error" class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="location-info">
+                <h2>Our Locations</h2>
+                <p>Address: Vienna Café, 123 Mozart Street, Vienna, Austria</p>
+                <p>Working time: Monday-Saturday: 8:00 AM - 6:00 PM</p>
+                <img src="/assets/imgs/contact_img.png" alt="Image">
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>
+   <div class="footer-wrapper">
+       <div class="footer-container">
+           <div class="column">
+               <p>Address: </p>
+               <p>Vienna Café</p>
+               <p>123 Mozart Street</p>
+               <p>Vienna, Austria</p>
+           </div>
+           <div class="column">
+               <p>Working Time:</p>
+               <p>Monday - Saturday</p>
+               <p>8:00AM - 6:00PM</p>
 
+           </div>
+           <div class="column">
+               <p>Phone Number:</p>
+               <p>+43 123 456 7890</p>
+               <p>Email:</p>
+               <p>ecobites@gmail.com</p>
+           </div>
 
+       </div>
+       <div class="copyright-container">
+           <p>© 2024 Eco Bites. All rights reserved.</p>
+           <div class="socials-container">
+               <img src="assets/images/social/facebook.png" alt="facebook logo">
+               <img src="assets/images/social/insta.png" alt="instagram logo">
+               <img src="assets/images/social/twitter.png" alt="twitter logo">
+           </div>
+       </div>
+   </div>
+
+    <div id="scroll-to-top" class="scroll-to-top">&#9650;</div>
     <script src="../js/slide.js"></script>
 </footer>
 
