@@ -2,72 +2,102 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eco Bites</title>
+    <!--    JS files -->
+    <script src="js/featured-product-slider.js" defer></script>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/landing-page-responsive.css">
     <link rel="stylesheet" href="styles/slide.css">
+    <link rel="stylesheet" href="styles/product-slider.styles.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
-    <header id="header">
-        <nav id="nav">
-            <ul>
-            <li><a  href="../index.html" title="home">our bites</a></li>
+<header id="header">
+    <nav id="nav">
+        <ul>
+            <li><a href="#" title="home">our bites</a></li>
             <br>
-            <li><a  href="../pages/order.html" title="order">order now</a></li>
+            <li><a href="pages/product_catalog.html" title="order">order now</a></li>
             <br>
-            <li><a  href="../pages/about.html" title="about">about</a></li>
+            <li><a href="pages/about.html" title="about">about</a></li>
             <br>
-            <li><a  href="pages/blog.html" title="blog">blog</a></li>
+            <li><a href="pages/blog.html" title="blog">blog</a></li>
             <br>
-            <li><a  href="../pages/contact.html" title="contact">contact</a></li>
-            </ul>
-        </nav>
-    </header>
+            <li><a href="pages/contact.html" title="contact">contact</a></li>
+        </ul>
+    </nav>
+</header>
+<!--    Main-->
+<main>
+    <div class="hero-section-container">
+        <section>
+            <div class="headTxt">
+                <a href="../index.html"><img id="logo" src="../assets/images/Logo-EcoBites.svg" alt="logo"/></a>
+                <p style="font-size: 40px;">Cupcakes</p>
+                <p>a little bit wild</p>
+            </div>
+        </section>
 
-
-    <section>
-    <div class="headTxt">
-        <a href="../index.html"><img id="logo" src="../assets/images/Logo-EcoBites.svg" alt="logo" /></a>
-    <p style="font-size: 40px;">Cupcakes</p>
-    <p>a little bit wild</p>            
+        <section>
+            <div class="slideshow-container">
+                <div class="mySlides ">
+                    <img src="../assets\images\cupcake.png" style="width:100%" alt="Slide 1">
+                </div>
+                <div class="mySlides">
+                    <img src="../assets/images/cupcake2.png" style="width:100%" alt="Slide 2">
+                </div>
+                <div class="mySlides">
+                    <img src="../assets/images/cupcake3.png" style="width:100%" alt="Slide 3">
+                </div>
+                <div class="mySlides ">
+                    <img src="../assets/images/cupcake4.png" style="width:100%" alt="Slide 4">
+                </div>
+            </div>
+        </section>
     </div>
-    </section>
-
-    <section>
-        <div class="slideshow-container">
-            <div class="mySlides ">
-                <img src="../assets\images\cupcake.png" style="width:100%" alt="Slide 1">
-            </div>
-            <div class="mySlides">
-                <img src="../assets/images/cupcake2.png" style="width:100%" alt="Slide 2">
-            </div>
-            <div class="mySlides">
-                <img src="../assets/images/cupcake3.png" style="width:100%" alt="Slide 3">
-            </div>
-            <div class="mySlides ">
-                <img src="../assets/images/cupcake4.png" style="width:100%" alt="Slide 4">
-            </div>
+    <!--        Product Slider -->
+    <div id="slider-container">
+        <div id="s-left" class="swipe-icon left">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6L9 12L15 18" stroke="black" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
         </div>
-    </section>
+<!--        // Slider Container Body-->
+        <div class="playBtn-Container isPlaying ">
+
+        </div>
+        <div id="s-right" class="swipe-icon right">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6L9 12L15 18" stroke="black" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+    <div id="product-description-container">
+        <img class="desc-img active" id="pd0" src="assets/images/PDesc1.jpg" alt="product description image 1">
+        <img class="desc-img" id="pd1" src="assets/images/PDesc2.jpg">
+        <img class="desc-img" id="pd2" src="assets/images/PDesc3.jpg">
+    </div>
+</main>
+
+<footer>
 
 
-
-    <footer>
-
-
-        <script src="../js/slide.js"></script>
-    </footer>
+    <script src="../js/slide.js"></script>
+</footer>
 
 </body>
 </html>

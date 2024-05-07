@@ -1,0 +1,162 @@
+
+#slider-container {
+    /*width: 800px;*/
+    width: 100%;
+    height: 500px;
+    /*height: 400px;*/
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+#slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*display: none;*/
+    /*display: block;*/
+    position: absolute;
+    /*transition: transform .5s ease-in-out;*/
+}
+/*
+if the class img is not the active one, we offset it
+*/
+#slider-container img:not(.show-img) {
+    top: 0;
+    left: -100%;
+}
+
+
+.show-img {
+    /*transform: translateX(-100%);*/
+}
+
+#slider-container .show-img {
+    display: block;
+}
+
+
+
+.swipe-icon {
+    position: absolute;
+    display: flex;
+    padding: 4px;
+    justify-content: center;
+    border-radius: 20px;
+    z-index: 1000;
+    transition: background-color .5s ease;
+
+    /*svg icon below*/
+    .icon path {
+        stroke: #fff;
+    }
+}
+
+.swipe-icon:hover {
+    background-color: white;
+    /*border-radius: 24px;*/
+    .icon path {
+        stroke: #000;
+    }
+}
+
+.swipe-icon.left {
+    top: 50%;
+    left: 20px;
+}
+
+.swipe-icon.right {
+    top: 50%;
+    right: 20px;
+
+    svg {
+        transform: scaleX(-1);
+    }
+}
+
+.playBtn-Container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 20px;
+    z-index: 100;
+
+    svg {
+        background-color: #1e1d1d;
+        padding: 8px;
+        border-radius: 24px;
+    }
+
+    path {
+        fill: #fff;
+    }
+}
+
+
+/* This will apply when the isPlaying class is NOT present on the playBtn-Container */
+.playBtn-Container:not(.isPlaying) #play {
+    display: block;
+}
+
+.playBtn-Container:not(.isPlaying) #stop {
+    display: none;
+}
+
+/* This will apply when the isPlaying class IS present on the playBtn-Container */
+.playBtn-Container.isPlaying #play {
+    display: none;
+}
+
+.playBtn-Container.isPlaying #stop {
+    display: block;
+}
+
+
+/*------------------ Keyframes Animations -------------------*/
+/* We move the first image to the left */
+@keyframes next1 {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes next2 {
+    from {
+        left: 100%
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes prev1 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes prev2 {
+    from {
+        left: -100%
+    }
+    to {
+        left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+    }
+    #slider-container {
+        width: 100%;
+        height: 50vh;
+    }
+}

@@ -5,9 +5,9 @@
 }
 
 body{
-    background-image: url(../assets/images/background.png);
-    background-size:cover;
-    background-repeat: no-repeat;
+    /*background-image: url(../assets/images/background.png);*/
+    /*background-size:cover;*/
+    /*background-repeat: no-repeat;*/
 }
 
 nav{
@@ -39,4 +39,27 @@ li:hover{
     margin-right: 10%;
     padding-top: 1%;
 }
+.hero-section-container {
 
+    background-image: url(../assets/images/background.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#product-description-container {
+    padding: 80px 150px;
+}
+
+#product-description-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.desc-img {
+    display: none;
+}
+
+.active {
+    display: block;
+}
