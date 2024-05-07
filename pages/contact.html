@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap">
+
+    <title>Contact</title>
+    <style>
+
+body {
+  line-height: 1;
+  font-family: 'Playfair Display', serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+      
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-info, .location-info {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .contact-info h1, .contact-info h2, .contact-info p {
+            text-align: left;
+            color: #596F7A; 
+        }
+
+        .right-align {
+            text-align: right;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #989898; 
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #989898; 
+        }
+
+        .form-group input.error, .form-group textarea.error {
+            border-color: #ff0000; 
+        }
+
+        .error-message {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            color: #ff0000; 
+            font-size: 12px;
+        }
+
+        button {
+            width: 225px;
+            height: 41px;
+            background-color: #AFBFA5;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: auto; 
+            display: block; 
+        }
+
+        button:hover {
+            background-color: #9BAF96;
+        }
+
+      
+        .location-info h2, .location-info p {
+            color: #496A5D; 
+        }
+
+        .location-info img {
+            width: 90%;
+            height: auto;
+        }
+
+        @media screen and (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .contact-info, .location-info {
+                flex: 1;
+                margin-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-info">
+            <h1>Contact Us</h1>
+            <p>We are so glad that you have come to visit The Cupcake Collection website.</p>
+            <h2 class="right-align">Get In Touch</h2>
+            <p class="right-align">Leave us a message.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <span id="name-error" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="email-error" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                    <span id="phone-error" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="location-info">
+            <h2>Our Locations</h2>
+            <p>Address: Vienna Café, 123 Mozart Street, Vienna, Austria</p>
+            <p>Working time: Monday-Saturday: 8:00 AM - 6:00 PM</p>
+            <img src="/assets/imgs/contact_img.png" alt="Image">
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (validateForm()) {
+                    alert('Form submitted successfully!');
+                }
+            });
+
+            form.querySelectorAll('input, select, textarea').forEach(input => {
+                input.addEventListener('focusout', () => validateInput(input));    
+                input.addEventListener('input', () => clearError(input));
+            });
+
+            function validateForm() {
+                return Array.from(form.querySelectorAll('input, select, textarea')).every(input => validateInput(input));
+            }
+
+            function validateInput(input) {
+                const errorSpan = document.getElementById(`${input.id}-error`);
+                const errorMessage = getErrorMessage(input);
+                const isValid = input.checkValidity() && errorMessage === '';
+
+                if (!isValid) {
+                    showError(input, errorMessage);
+                }
+                
+                input.classList.toggle('error', !isValid);
+                return isValid;
+            }
+
+            function getErrorMessage(input) {
+                const value = input.value.trim();
+                switch (input.id) {
+                    case 'name':
+                        if (value === '') {
+                            return 'Name is required';
+                        } else if (!isValidName(value)) {
+                            return 'Name should start with a capital letter';
+                        }
+                        break;
+                    case 'email':
+                        if (value === '') {
+                            return 'Email is required';
+                        } else if (!isValidEmail(value)) {
+                            return 'Invalid email format';
+                        }
+                        break;
+                    case 'phone':
+                        if (value !== '' && !isValidPhone(value)) {
+                            return 'Phone number should contain at least 10 digits, only digits allowed';
+                        }
+                        break;
+                    // Добавьте дополнительные проверки для других полей по аналогии
+                }
+                return '';
+            }
+
+            function showError(input, errorMessage) {
+                const errorSpan = document.getElementById(`${input.id}-error`);
+                errorSpan.textContent = errorMessage;
+                input.classList.add('error');
+            }
+
+            function clearError(input) {
+                const errorSpan = document.getElementById(`${input.id}-error`);
+                errorSpan.textContent = '';
+                input.classList.remove('error');
+            }
+
+            function isValidName(name) {
+                // Проверка, что имя начинается с заглавной буквы
+                return /^[A-Z]/.test(name);
+            }
+
+            function isValidEmail(email) {
+                // Проверка формата электронной почты
+                const emailRegex = /^\S+@\S+\.\S+$/;
+                return emailRegex.test(email);
+            }
+
+            function isValidPhone(phone) {
+                // Проверка формата номера телефона
+                const phoneRegex = /^\d{10}$/;
+                return phoneRegex.test(phone);
+            }
+        });
+    </script>
+</body>
+</html>
